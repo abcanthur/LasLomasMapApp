@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
     tools:context="com.laslomas.abcanthur.laslomasmapapp.MainActivity">
 
@@ -23,31 +24,60 @@
 
     <include layout="@layout/content_main" />
 
-    <android.support.design.widget.FloatingActionButton
-    android:id="@+id/fab"
+    <com.getbase.floatingactionbutton.FloatingActionButton
+    android:id="@+id/add_elements"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="bottom|end"
     android:layout_margin="@dimen/fab_margin"
     app:srcCompat="@android:drawable/ic_dialog_map" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:srcCompat="@drawable/home_icon"
-        android:id="@+id/fab_home" />
 
-    <android.support.design.widget.FloatingActionButton
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:srcCompat="@drawable/curr_location_icon"
-        android:id="@+id/fab_curr_location" />
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        fab:fab_addButtonColorNormal="@color/colorPrimary"
+        fab:fab_addButtonColorPressed="@color/colorAccent"
+        fab:fab_addButtonPlusIconColor="@color/colorAccent"
+        fab:fab_labelStyle="@style/menu_labels_style">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:clickable="true"
+            app:fabSize="mini"
+
+            android:id="@+id/fab_return_home"
+            fab:fab_title="Home"/>
+        <!--app:srcCompat="@drawable/home_icon"-->
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:clickable="true"
+            app:fabSize="mini"
+
+            android:id="@+id/fab_curr_location"
+            fab:fab_title="Current Location"/>
+            <!--app:srcCompat="@drawable/curr_location_icon"-->
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:clickable="true"
+            app:fabSize="mini"
+
+            android:id="@+id/fab_last_location"
+            fab:fab_title="Previous Location"/>
+        <!--app:srcCompat="@drawable/last_location"-->
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
 
 </android.support.design.widget.CoordinatorLayout>
